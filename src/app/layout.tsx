@@ -6,6 +6,8 @@ import {
   UserButton
 } from '@clerk/nextjs'
 import './globals.css'
+import { Navbar } from "@/components/Navbar";
+import { Footer } from '@/components/Footer';
 export default function RootLayout({
   children,
 }: {
@@ -15,13 +17,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+        <Navbar />
+          
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
